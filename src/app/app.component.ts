@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NewComponentComponent } from './new-component/new-component.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-project';
+
+  constructor(private NewComponent: NewComponentComponent) {}
+
+  async renderNewComponent(): Promise<any> {
+    return await NewComponentComponent
+  }
 }
